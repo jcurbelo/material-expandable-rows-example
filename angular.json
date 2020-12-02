@@ -118,6 +118,10 @@
               "devServerTarget": "material-expandable-rows-example:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
