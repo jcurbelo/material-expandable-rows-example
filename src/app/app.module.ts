@@ -8,11 +8,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ExpandableTableExpansionPanelsComponent } from './expandable-table-expansion-panels/expandable-table-expansion-panels.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExpandableTableComponent
+    ExpandableTableComponent,
+    ExpandableTableExpansionPanelsComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +24,7 @@ import { MatCardModule } from '@angular/material/card';
     MatPaginatorModule,
     MatSortModule,
     MatCardModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

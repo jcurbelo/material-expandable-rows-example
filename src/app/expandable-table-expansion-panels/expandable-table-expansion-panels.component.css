@@ -1,0 +1,105 @@
+.full-width-table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+  cursor: pointer;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.table_content {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: .0178571429em;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+
+.table_header-row {
+  background-color: inherit;
+}
+
+.table_row {
+  background-color: inherit;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(0, 0, 0, .12);
+}
+
+.table_row:not(.table_row--selected):hover {
+  background-color: rgba(0, 0, 0, .04);
+}
+
+.table_cell,
+.table_header-cell {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.table_table {
+  min-width: 100% !important;
+  border: 0;
+  white-space: nowrap;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table_cell {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: .0178571429em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: rgba(0, 0, 0, .87);
+  height: 52px;
+}
+
+.table_header-cell {
+  height: 56px;
+  color: rgba(0, 0, 0, .87);
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.375rem;
+  font-weight: 500;
+  letter-spacing: .0071428571em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  box-sizing: border-box;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

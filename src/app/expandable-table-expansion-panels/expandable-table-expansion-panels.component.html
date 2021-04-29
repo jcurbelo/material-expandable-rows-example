@@ -1,0 +1,62 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" multiTemplateDataRows matSort aria-label="Elements">
+
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
+      <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    </ng-container>
+
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+        <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <div class="example-element-description">
+            <mat-accordion>
+              <mat-expansion-panel *ngFor="let group of element.groups" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{group.name}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    This is a summary of the content
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="mat-elevation-z2">
+                  <table class="table_table full-width-table">
+                    <thead>
+                      <tr class="table_header-row">
+                        <th class="table_header-cell">id</th>
+                        <th class="table_header-cell">name</th>
+                        <th class="table_header-cell">weight</th>
+                        <th class="table_header-cell">price</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table_content">
+                      <tr class="table_row" *ngFor="let item of group.items">
+                        <td class="table_cell">{{item.id}}</td>
+                        <td class="table_cell">{{item.name}}</td>
+                        <td class="table_cell">{{item.weight}}</td>
+                        <td class="table_cell">{{item.price}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+
+  <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="10"
+    [pageSizeOptions]="[10, 25, 50, 100, 250]">
+  </mat-paginator>
+</div>
